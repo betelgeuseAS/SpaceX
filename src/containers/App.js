@@ -1,50 +1,61 @@
 import React, { Component } from 'react';
+
 import './App.sass';
+
 import { connect } from	'react-redux';
-import PageOne from '../components/PageOne';
-import PageTwo from '../components/PageTwo';
-import { setYear } from	'../actions/pageOneAction'
+import { fetchAllData } from '../actions/appAction';
+
+import logo from '../img/SpaceX-Logo.svg';
+
+import NextLaunch from '../components/NextLaunch';
 
 class App extends Component {
-  onBtnClick = event =>	{
-    const	year = +event.currentTarget.innerText;
-    // this.props.setYear(year)
-    this.props.setYearAction(year);
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+  componentDidMount() {
+    this.props.fetchAllData();
+  }
+
+  isEmpty = (obj) => {
+    for (var key in obj) {
+      return false;
+    }
+    return true;
   };
 
   render() {
-    const	{	pageOne: {year, photos}, pageTwo: {name} } = this.props;
+    const { nextLaunch } = this.props;
     return (
       <div className="App">
         <header className="App-header">
-          <h1>My top photo</h1>
+          <img src={logo} alt=""/>
+
+          {/*<NextLaunch launchData={nextLaunch} />*/}
+          {!this.isEmpty(nextLaunch) ? <NextLaunch launchData={nextLaunch} /> : <div>Loading...</div>}
         </header>
-        <PageTwo name={name} />
-        <PageOne
-          photos={photos}
-          year={year}
-          onYear={this.onBtnClick}	/>
       </div>
     );
   }
 }
 
 const	mapStateToProps	=	store	=> {
-  console.log(store);
+  // console.log(store);
   return {
-    pageOne: store.pageOne,
-    pageTwo: store.pageTwo,
+    nextLaunch: store.nextLaunch,
   }
 };
 
 const	mapDispatchToProps = dispatch	=> {
   return {
-    setYearAction: year	=> dispatch(setYear(year)),
-    //setYear:	year =>	dispatch(setYear(year))
+    fetchAllData: () => dispatch(fetchAllData()),
   }
-  // const	mapDispatchToProps = dispatch	=> ({
-  //   setYearAction: year	=> dispatch(setYear(year)),
-  // })
 };
+// const	mapDispatchToProps = dispatch	=> ({
+//   setYearAction: year	=> dispatch(setYear(year)),
+// })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,1 +1,1 @@
-export const SET_YEAR = 'SET_YEAR';
+export const FETCH_DATA_NEXT_LAUNCH = 'FETCH_DATA_NEXT_LAUNCH';
