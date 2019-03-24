@@ -5,9 +5,8 @@ import './App.sass';
 import { connect } from	'react-redux';
 import { fetchAllData } from '../actions/appAction';
 
-import logo from '../img/SpaceX-Logo.svg';
-
-import NextLaunch from '../components/NextLaunch';
+import NextLaunch from './NextLaunch';
+import { Menu } from '../components/Menu';
 
 class App extends Component {
   constructor(props) {
@@ -31,12 +30,10 @@ class App extends Component {
     const { nextLaunch } = this.props;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} alt=""/>
+        <Menu />
 
-          {/*<NextLaunch launchData={nextLaunch} />*/}
-          {!this.isEmpty(nextLaunch) ? <NextLaunch launchData={nextLaunch} /> : <div>Loading...</div>}
-        </header>
+        {/*<NextLaunch launchData={nextLaunch} />*/}
+        {!this.isEmpty(nextLaunch) ? <NextLaunch launchData={nextLaunch} /> : <div>Loading...</div>}
       </div>
     );
   }
