@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { nextLaunchReducer } from './nextLaunchReducer';
+import { launchesReducer } from './LaunchesReducer';
 
 export	const	rootReducer	=	combineReducers({
-  nextLaunch:	nextLaunchReducer,
+  nextLaunch:	launchesReducer,
 });
