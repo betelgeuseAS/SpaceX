@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.sass';
+import "bootswatch/dist/journal/bootstrap.css";
 
 import Launches from './Launches';
 import { Menu } from '../components/Menu';
