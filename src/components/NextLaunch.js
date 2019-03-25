@@ -5,6 +5,8 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import moment from 'moment';
 
+import { Container, Row, Col } from 'react-bootstrap';
+
 let timer;
 class NextLaunch extends Component {
   constructor(props) {
@@ -64,12 +66,24 @@ class NextLaunch extends Component {
 
   render () {
     return (
-      <div>
-        {this.state.days ? this.state.days : '00'}:
-        {this.state.hours ? this.state.hours : '00'}:
-        {this.state.minutes ? this.state.minutes : '00'}:
-        {this.state.seconds ? this.state.seconds : '00'}
-      </div>
+      <>
+        <Container>
+          <Row>
+            <Col>
+              {this.state.days ? this.state.days : '00'}
+            </Col>
+            <Col>
+              {this.state.hours ? this.state.hours : '00'}
+            </Col>
+            <Col>
+              {this.state.minutes ? this.state.minutes : '00'}
+            </Col>
+            <Col>
+              {this.state.seconds ? this.state.seconds : '00'}
+            </Col>
+          </Row>
+        </Container>
+      </>
     );
   }
 }

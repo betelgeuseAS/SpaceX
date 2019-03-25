@@ -4,16 +4,16 @@ import { FETCH_DATA_NEXT_LAUNCH } from '../constants/constants';
 
 const apiUrl = 'https://api.spacexdata.com/v3';
 
-export const fetchData = (data) => {
+export const fetchNextLaunch = (data) => {
   return {
     type: FETCH_DATA_NEXT_LAUNCH,
     payload: data
   };
 };
-export const fetchAllData = () => dispatch => {
+export const fetchNextLaunchResolver = () => dispatch => {
   return axios.get(`${apiUrl}/launches/next`)
     .then(response => {
-      dispatch(fetchData(response.data));
+      dispatch(fetchNextLaunch(response.data));
     })
     .catch(error => {
       throw(error);
