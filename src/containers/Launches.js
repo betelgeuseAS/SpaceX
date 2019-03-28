@@ -5,6 +5,8 @@ import NextLaunch from '../components/NextLaunch'
 import { connect } from	'react-redux';
 import { fetchNextLaunchResolver } from '../actions/Launches';
 
+import { isEmpty } from '../components/helpers/helpers';
+
 class Launches extends Component {
   constructor(props) {
     super(props);
@@ -17,18 +19,11 @@ class Launches extends Component {
     this.props.fetchNextLaunchResolver();
   }
 
-  isEmpty = (obj) => {
-    for (var key in obj) {
-      return false;
-    }
-    return true;
-  };
-
   render() {
     const { nextLaunch } = this.props;
     return (
       <>
-        {!this.isEmpty(nextLaunch) ? <NextLaunch launchData={nextLaunch} /> : <div>Loading...</div>}
+        {!isEmpty(nextLaunch) ? <NextLaunch launchData={nextLaunch} /> : <div>Loading...</div>}
       </>
     );
   }

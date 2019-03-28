@@ -1,9 +1,11 @@
 import React, { useState, useEffect, Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 import 'moment-timezone';
 import moment from 'moment';
+
+import './NextLaunch.sass';
 
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -65,21 +67,45 @@ class NextLaunch extends Component {
   // }, []);
 
   render () {
+    const { launchData } = this.props;
     return (
       <>
         <Container>
           <Row>
+            <Col className="text-left">
+              <h3>NEXT LAUNCH</h3>
+            </Col>
+          </Row>
+
+          <Row>
             <Col>
-              {this.state.days ? this.state.days : '00'}
+              <div className="time">{this.state.days ? this.state.days : '00'}</div>
+              <div className="description">Days</div>
             </Col>
             <Col>
-              {this.state.hours ? this.state.hours : '00'}
+              <div className="time">{this.state.hours ? this.state.hours : '00'}</div>
+              <div className="description">Hours</div>
             </Col>
             <Col>
-              {this.state.minutes ? this.state.minutes : '00'}
+              <div className="time">{this.state.minutes ? this.state.minutes : '00'}</div>
+              <div className="description">Minutes</div>
             </Col>
             <Col>
-              {this.state.seconds ? this.state.seconds : '00'}
+              <div className="time">{this.state.seconds ? this.state.seconds : '00'}</div>
+              <div className="description">Seconds</div>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col className="text-left">
+              <div><strong>Mission Name: </strong>{launchData.mission_name}</div>
+              <div><strong>Launch Date: </strong>{launchData.launch_date_local}</div>
+              <div><strong>Launch Site: </strong>{launchData.launch_site.site_name_long}</div>
+            </Col>
+            <Col className="text-right">
+              <div><strong>Rocket: </strong>{launchData.rocket.rocket_name}</div>
+              <div><strong>Payload Type: </strong>{launchData.rocket.second_stage.payloads[0].payload_type}</div>
+              <div><strong>Manufacturer: </strong>{launchData.rocket.second_stage.payloads[0].manufacturer}</div>
             </Col>
           </Row>
         </Container>
