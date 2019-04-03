@@ -4,6 +4,8 @@ import React from 'react';
 // import { Button } from 'react-bootstrap';
 import { Container, Row, Col, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
+import { Link } from "react-router-dom";
+
 import logo from '../img/SpaceX-Logo.svg';
 
 import './Menu.sass';
@@ -23,20 +25,18 @@ export const Menu = () => {
             <NavDropdown.Item href="#action/1.4">Upcoming Launches</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/1.5">Latest Launch</NavDropdown.Item>
-            <NavDropdown.Item href="#action/1.6">Next Launch</NavDropdown.Item>
+            <NavDropdown.Item as="button"><Link to="/">Next Launch</Link></NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Rockets" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/2.1">All Rockets</NavDropdown.Item>
-            <NavDropdown.Item href="#action/2.3">One Rocket</NavDropdown.Item>
+            <NavDropdown.Item as="button"><Link to="/rockets">One Rocket</Link></NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Missions" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/2.1">All Missions</NavDropdown.Item>
-            <NavDropdown.Item href="#action/2.3">One Mission</NavDropdown.Item>
+            <NavDropdown.Item as="button"><Link to="/missions">One Mission</Link></NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 };
-
-// export default Menu;

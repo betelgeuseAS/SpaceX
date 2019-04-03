@@ -2,7 +2,7 @@ import React, { useState, useEffect, Component } from 'react';
 import PropTypes from 'prop-types';
 
 // import Moment from 'react-moment';
-import 'moment-timezone';
+// import 'moment-timezone';
 import moment from 'moment';
 
 import './NextLaunch.sass';

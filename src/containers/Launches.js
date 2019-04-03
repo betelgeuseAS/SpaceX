@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import { Menu } from '../components/Menu';
 import NextLaunch from '../components/NextLaunch'
 
 import { connect } from	'react-redux';
@@ -23,6 +24,7 @@ class Launches extends Component {
     const { nextLaunch } = this.props;
     return (
       <>
+        <Menu />
         {!isEmpty(nextLaunch) ? <NextLaunch launchData={nextLaunch} /> : <div>Loading...</div>}
       </>
     );
