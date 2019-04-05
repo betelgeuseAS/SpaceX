@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { /*useState, useEffect, */Component } from 'react';
 import PropTypes from 'prop-types';
 
 // import Moment from 'react-moment';
@@ -18,7 +18,7 @@ class NextLaunch extends Component {
       hours: '',
       minutes: '',
       seconds: '',
-      launchDate: props.launchData.launch_date_local
+      launchDate: props.nextLaunchData.launch_date_local
     };
   }
 
@@ -67,10 +67,10 @@ class NextLaunch extends Component {
   // }, []);
 
   render () {
-    const { launchData } = this.props;
+    const { nextLaunchData } = this.props;
     return (
       <>
-        <Container>
+        <Container className="nextLaunch">
           <Row>
             <Col className="text-left">
               <h3>NEXT LAUNCH</h3>
@@ -98,14 +98,14 @@ class NextLaunch extends Component {
 
           <Row>
             <Col className="text-left">
-              <div><strong>Mission Name: </strong>{launchData.mission_name}</div>
-              <div><strong>Launch Date: </strong>{launchData.launch_date_local}</div>
-              <div><strong>Launch Site: </strong>{launchData.launch_site.site_name_long}</div>
+              <div><strong>Mission Name: </strong>{nextLaunchData.mission_name}</div>
+              <div><strong>Launch Date: </strong>{nextLaunchData.launch_date_local}</div>
+              <div><strong>Launch Site: </strong>{nextLaunchData.launch_site.site_name_long}</div>
             </Col>
             <Col className="text-right">
-              <div><strong>Rocket: </strong>{launchData.rocket.rocket_name}</div>
-              <div><strong>Payload Type: </strong>{launchData.rocket.second_stage.payloads[0].payload_type}</div>
-              <div><strong>Manufacturer: </strong>{launchData.rocket.second_stage.payloads[0].manufacturer}</div>
+              <div><strong>Rocket: </strong>{nextLaunchData.rocket.rocket_name}</div>
+              <div><strong>Payload Type: </strong>{nextLaunchData.rocket.second_stage.payloads[0].payload_type}</div>
+              <div><strong>Manufacturer: </strong>{nextLaunchData.rocket.second_stage.payloads[0].manufacturer}</div>
             </Col>
           </Row>
         </Container>
@@ -115,11 +115,11 @@ class NextLaunch extends Component {
 }
 
 NextLaunch.propTypes = {
-  launchData:	PropTypes.object.isRequired
+  nextLaunchData:	PropTypes.object.isRequired
 };
 
 NextLaunch.defaultProps = {
-  launchData:	{}
+  nextLaunchData:	{}
 };
 
 export default NextLaunch;

@@ -2,7 +2,7 @@ import React from 'react';
 
 // import Button from 'react-bootstrap/Button';
 // import { Button } from 'react-bootstrap';
-import { Container, Row, Col, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 import { Link } from "react-router-dom";
 

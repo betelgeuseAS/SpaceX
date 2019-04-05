@@ -2,9 +2,13 @@ import React, {Component} from 'react';
 
 import { Menu } from '../components/Menu';
 import NextLaunch from '../components/NextLaunch'
+import LatestLaunch from '../components/LatestLaunch';
 
 import { connect } from	'react-redux';
-import { fetchNextLaunchResolver } from '../actions/Launches';
+import {
+  fetchNextLaunchResolver,
+  fetchLatestLaunchResolver
+} from '../actions/launchesAction';
 
 import { isEmpty } from '../components/helpers/helpers';
 
@@ -18,14 +22,16 @@ class Launches extends Component {
 
   componentDidMount() {
     this.props.fetchNextLaunchResolver();
+    this.props.fetchLatestLaunchResolver();
   }
 
   render() {
-    const { nextLaunch } = this.props;
+    const { nextLaunch, latestLaunch } = this.props;
     return (
       <>
         <Menu />
-        {!isEmpty(nextLaunch) ? <NextLaunch launchData={nextLaunch} /> : <div>Loading...</div>}
+        {!isEmpty(nextLaunch) ? <NextLaunch nextLaunchData={nextLaunch} /> : <div>Loading...</div>}
+        {!isEmpty(nextLaunch) ? <LatestLaunch latestLaunchData={latestLaunch} /> : <div>Loading...</div>}
       </>
     );
   }
@@ -35,12 +41,14 @@ const	mapStateToProps	=	store	=> {
   // console.log(store);
   return {
     nextLaunch: store.nextLaunch,
+    latestLaunch: store.latestLaunch
   }
 };
 
 const	mapDispatchToProps = dispatch	=> {
   return {
     fetchNextLaunchResolver: () => dispatch(fetchNextLaunchResolver()),
+    fetchLatestLaunchResolver: () => dispatch(fetchLatestLaunchResolver())
   }
 };
 // const	mapDispatchToProps = dispatch	=> ({
