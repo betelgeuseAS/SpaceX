@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Menu } from './Menu';
 
-import './Whoops404.sass';
-
 import Error404 from '../img/Error404.png';
+
+import './Whoops404.sass';
 
 export const Whoops404 = ({ location }) => {
   return (
@@ -17,5 +17,3 @@ export const Whoops404 = ({ location }) => {
     </div>
   );
 };
-
-Whoops404.propTypes = {};

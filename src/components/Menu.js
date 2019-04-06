@@ -1,10 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 // import Button from 'react-bootstrap/Button';
 // import { Button } from 'react-bootstrap';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-
-import { Link } from "react-router-dom";
 
 import logo from '../img/SpaceX-Logo.svg';
 
@@ -19,13 +18,12 @@ export const Menu = () => {
         <Nav className="mr-auto">
           <Nav.Link href="#home">Link</Nav.Link>
           <NavDropdown title="Launches" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/1.3">Past Launches</NavDropdown.Item>
-            <NavDropdown.Item href="#action/1.4">Upcoming Launches</NavDropdown.Item>
+            <NavDropdown.Item as="button"><Link to="/launches">All Launches</Link></NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item as="button" className="topLink"><Link to="/">Next Launch</Link></NavDropdown.Item>
           </NavDropdown>
           <Nav.Item as="button" className="topLink textBold"><Link to="/rockets">Rockets</Link></Nav.Item>
-          <Nav.Item as="button" className="topLink textBold"><Link to="/missions">Mission</Link></Nav.Item>
+          <Nav.Item as="button" className="topLink textBold"><Link to="/missions">Missions</Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
