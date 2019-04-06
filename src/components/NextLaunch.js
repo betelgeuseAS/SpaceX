@@ -68,6 +68,7 @@ class NextLaunch extends Component {
 
   render () {
     const { nextLaunchData } = this.props;
+    const { days, hours, minutes, seconds } = this.state;
     return (
       <>
         <Container className="nextLaunch">
@@ -79,20 +80,20 @@ class NextLaunch extends Component {
 
           <Row>
             <Col>
-              <div className="time">{this.state.days ? this.state.days : '00'}</div>
-              <div className="description">Days</div>
+              <div className="time">{days ? days : '00'}</div>
+              <div className="description">{days > 1 ? 'Days' : 'Day'}</div>
             </Col>
             <Col>
-              <div className="time">{this.state.hours ? this.state.hours : '00'}</div>
-              <div className="description">Hours</div>
+              <div className="time">{hours ? hours : '00'}</div>
+              <div className="description">{hours > 1 ? 'Hours' : 'Hour'}</div>
             </Col>
             <Col>
-              <div className="time">{this.state.minutes ? this.state.minutes : '00'}</div>
-              <div className="description">Minutes</div>
+              <div className="time">{minutes ? minutes : '00'}</div>
+              <div className="description">{minutes > 1 ? 'Minutes' : 'Minute'}</div>
             </Col>
             <Col>
-              <div className="time">{this.state.seconds ? this.state.seconds : '00'}</div>
-              <div className="description">Seconds</div>
+              <div className="time">{seconds ? seconds : '00'}</div>
+              <div className="description">{seconds > 1 ? 'Seconds' : 'Second'}</div>
             </Col>
           </Row>
 
