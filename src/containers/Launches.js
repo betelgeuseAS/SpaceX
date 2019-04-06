@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 
 import { Menu } from '../components/Menu';
 import NextLaunch from '../components/NextLaunch'
-import LatestLaunch from '../components/LatestLaunch';
+import PastLaunches from '../components/PastLaunches';
 
 import { connect } from	'react-redux';
 import {
   fetchNextLaunchResolver,
-  fetchLatestLaunchResolver
+  fetchPastLaunchesResolver
 } from '../actions/launchesAction';
 
-import { isEmpty } from '../components/helpers/helpers';
+import { isEmptyObject, isEmptyArray } from '../components/helpers/helpers';
 
 class Launches extends Component {
   constructor(props) {
@@ -22,16 +22,16 @@ class Launches extends Component {
 
   componentDidMount() {
     this.props.fetchNextLaunchResolver();
-    this.props.fetchLatestLaunchResolver();
+    this.props.fetchPastLaunchesResolver();
   }
 
   render() {
-    const { nextLaunch, latestLaunch } = this.props;
+    const { nextLaunch, pastLaunches } = this.props;
     return (
       <>
         <Menu />
-        {!isEmpty(nextLaunch) ? <NextLaunch nextLaunchData={nextLaunch} /> : <div>Loading...</div>}
-        {!isEmpty(nextLaunch) ? <LatestLaunch latestLaunchData={latestLaunch} /> : <div>Loading...</div>}
+        {isEmptyObject(nextLaunch) ? <NextLaunch nextLaunchData={nextLaunch} /> : <div>Loading...</div>}
+        {isEmptyArray(pastLaunches) ? <PastLaunches pastLaunchesData={pastLaunches} /> : <div>Loading...</div>}
       </>
     );
   }
@@ -41,18 +41,18 @@ const	mapStateToProps	=	store	=> {
   // console.log(store);
   return {
     nextLaunch: store.nextLaunch,
-    latestLaunch: store.latestLaunch
+    pastLaunches: store.pastLaunches
   }
 };
 
 const	mapDispatchToProps = dispatch	=> {
   return {
     fetchNextLaunchResolver: () => dispatch(fetchNextLaunchResolver()),
-    fetchLatestLaunchResolver: () => dispatch(fetchLatestLaunchResolver())
+    fetchPastLaunchesResolver: () => dispatch(fetchPastLaunchesResolver())
   }
 };
 // const	mapDispatchToProps = dispatch	=> ({
 //   setYearAction: year	=> dispatch(setYear(year)),
-// })
+// });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Launches);

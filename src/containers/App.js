@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.sass';
 import "bootswatch/dist/journal/bootstrap.css";
 
-// import { Menu } from '../components/Menu';
 import Launches from './Launches';
 import Rockets from './Rockets';
 import Missions from './Missions';
