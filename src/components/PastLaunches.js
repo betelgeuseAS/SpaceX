@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // import { Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 
-const LatestLaunch = ({ latestLaunch }) => {
+const PastLaunches = ({ pastLaunchesData }) => {
   return (
     <>
       <Container className="nextLaunch">
@@ -19,12 +19,12 @@ const LatestLaunch = ({ latestLaunch }) => {
   );
 };
 
-LatestLaunch.propTypes = {
-  latestLaunch:	PropTypes.object.isRequired
+PastLaunches.propTypes = {
+  pastLaunchesData:	PropTypes.array.isRequired
 };
 
-LatestLaunch.defaultProps = {
-  latestLaunch:	{}
+PastLaunches.defaultProps = {
+  pastLaunchesData:	[]
 };
 
-export default LatestLaunch;
+export default PastLaunches;

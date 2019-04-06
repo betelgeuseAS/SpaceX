@@ -17,24 +17,15 @@ export const Menu = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
+          <Nav.Link href="#home">Link</Nav.Link>
           <NavDropdown title="Launches" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/1.1">All Launches</NavDropdown.Item>
             <NavDropdown.Item href="#action/1.3">Past Launches</NavDropdown.Item>
             <NavDropdown.Item href="#action/1.4">Upcoming Launches</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/1.5">Latest Launch</NavDropdown.Item>
-            <NavDropdown.Item as="button"><Link to="/">Next Launch</Link></NavDropdown.Item>
+            <NavDropdown.Item as="button" className="topLink"><Link to="/">Next Launch</Link></NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown title="Rockets" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/2.1">All Rockets</NavDropdown.Item>
-            <NavDropdown.Item as="button"><Link to="/rockets">One Rocket</Link></NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="Missions" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/2.1">All Missions</NavDropdown.Item>
-            <NavDropdown.Item as="button"><Link to="/missions">One Mission</Link></NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Item as="button" className="topLink textBold"><Link to="/rockets">Rockets</Link></Nav.Item>
+          <Nav.Item as="button" className="topLink textBold"><Link to="/missions">Mission</Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

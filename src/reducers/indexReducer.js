@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { nextLaunchReducer } from './launches/nextLaunchReducer';
-import { latestLaunchReducer } from './launches/latetsLaunchReducer';
+import { pastLaunchesReducer } from './launches/PastLaunchesReducer';
 
 export	const	rootReducer	=	combineReducers({
   nextLaunch:	nextLaunchReducer,
-  latestLaunch: latestLaunchReducer
+  pastLaunches: pastLaunchesReducer
 });

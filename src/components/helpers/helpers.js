@@ -1,6 +1,11 @@
-export const isEmpty = (object) => {
+export const isEmptyObject = (object) => {
   for (let key in object) {
-    return false;
+    return true;
   }
-  return true;
+  return false;
+};
+
+export const isEmptyArray = (array) => {
+  if (array.length) return true;
+  return false;
 };
