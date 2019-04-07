@@ -18,7 +18,7 @@ export const Menu = () => {
         <Nav className="mr-auto">
           <Nav.Link href="#home">Link</Nav.Link>
           <NavDropdown title="Launches" id="basic-nav-dropdown">
-            <NavDropdown.Item as="button"><Link to="/launches">All Launches</Link></NavDropdown.Item>
+            <NavDropdown.Item as="button" className="topLink"><Link to="/launches">All Launches</Link></NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item as="button" className="topLink"><Link to="/">Next Launch</Link></NavDropdown.Item>
           </NavDropdown>

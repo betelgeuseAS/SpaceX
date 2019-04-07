@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
 import moment from 'moment';
 
-import './NextLaunch.sass';
+import './Launch.sass';
 
 let timer;
 class Launch extends Component {

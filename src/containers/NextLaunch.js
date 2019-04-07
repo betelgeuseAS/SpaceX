@@ -9,22 +9,17 @@ import { Menu } from '../components/Menu';
 import Launch from '../components/Launch';
 
 class NextLaunch extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  };
-
   componentDidMount() {
     this.props.fetchNextLaunchResolver();
   }
 
   render() {
     const { nextLaunch } = this.props;
+
     return (
       <>
         <Menu />
+
         {isEmptyObject(nextLaunch) ? <Launch nextLaunchData={nextLaunch} /> : <div>Loading...</div>}
       </>
     );
