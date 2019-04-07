@@ -1,28 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import LaunchItem from './LaunchItem';
 
-class PastLauches extends Component {
-  render() {
-    return (
-      <>
-        {
-          this.props.pastLaunchesData.map(launch => (
-            <LaunchItem key={launch.flight_number} launch={launch} />
-          ))
-        }
-      </>
-    );
-  }
-}
+export const PastLaunches = ({ pastLaunchesData }) => {
+  return (
+    <>
+      {
+        pastLaunchesData.map(launch => (
+          <LaunchItem key={launch.flight_number} launch={launch} />
+        ))
+      }
+    </>
+  );
+};
 
-PastLauches.propTypes = {
+PastLaunches.propTypes = {
   pastLaunchesData:	PropTypes.array.isRequired
 };
 
-PastLauches.defaultProps = {
+PastLaunches.defaultProps = {
   pastLaunchesData:	[]
 };
-
-export default PastLauches;
