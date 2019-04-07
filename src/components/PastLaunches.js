@@ -1,30 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-// import Button from 'react-bootstrap/Button';
-// import { Button } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
+import LaunchItem from './LaunchItem';
 
-const PastLaunches = ({ pastLaunchesData }) => {
-  return (
-    <>
-      <Container className="nextLaunch">
-        <Row>
-          <Col className="text-left">
-            <h3>LATEST LAUNCH</h3>
-          </Col>
-        </Row>
-      </Container>
-    </>
-  );
-};
+class PastLauches extends Component {
+  render() {
+    return (
+      <>
+        {
+          this.props.pastLaunchesData.map(launch => (
+            <LaunchItem key={launch.flight_number} launch={launch} />
+          ))
+        }
+      </>
+    );
+  }
+}
 
-PastLaunches.propTypes = {
+PastLauches.propTypes = {
   pastLaunchesData:	PropTypes.array.isRequired
 };
 
-PastLaunches.defaultProps = {
+PastLauches.defaultProps = {
   pastLaunchesData:	[]
 };
 
-export default PastLaunches;
+export default PastLauches;

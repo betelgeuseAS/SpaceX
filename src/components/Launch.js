@@ -1,16 +1,13 @@
 import React, { /*useState, useEffect, */Component } from 'react';
 import PropTypes from 'prop-types';
 
-// import Moment from 'react-moment';
-// import 'moment-timezone';
+import { Container, Row, Col } from 'react-bootstrap';
 import moment from 'moment';
 
-import './NextLaunch.sass';
-
-import { Container, Row, Col } from 'react-bootstrap';
+import './Launch.sass';
 
 let timer;
-class NextLaunch extends Component {
+class Launch extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -115,12 +112,12 @@ class NextLaunch extends Component {
   }
 }
 
-NextLaunch.propTypes = {
+Launch.propTypes = {
   nextLaunchData:	PropTypes.object.isRequired
 };
 
-NextLaunch.defaultProps = {
+Launch.defaultProps = {
   nextLaunchData:	{}
 };
 
-export default NextLaunch;
+export default Launch;

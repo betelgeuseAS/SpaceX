@@ -1,6 +1,6 @@
 import {
   FETCH_DATA_PAST_LAUNCHES,
-} from '../../constants/constants';
+} from '../constants/constants';
 
 const	initialState = [];
 

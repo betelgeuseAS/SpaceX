@@ -8,6 +8,7 @@ class Missions extends Component {
     return (
       <>
         <Menu />
+
         <h1>Missions</h1>
       </>
     );

@@ -1,6 +1,6 @@
 import {
   FETCH_DATA_NEXT_LAUNCH,
-} from '../../constants/constants';
+} from '../constants/constants';
 
 const	initialState = {};
 
