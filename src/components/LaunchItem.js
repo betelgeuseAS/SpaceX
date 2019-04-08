@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { Row, Col, Card, Button, Modal } from 'react-bootstrap';
+import { Row, Col, Card, Button, Modal, ListGroup } from 'react-bootstrap';
 import classNames from 'classnames';
 import Moment from 'react-moment';
 
-export const LaunchItem = ({ launch: {flight_number, mission_name, launch_date_local, launch_success} }) => {
+export const LaunchItem = ({ launch: {flight_number, mission_name, launch_date_local, launch_year, launch_success, details,
+rocket: {rocket_id, rocket_name, rocket_type}} }) => {
   const [show, setShow] = useState(false);
   return (
     <>
@@ -26,15 +27,31 @@ export const LaunchItem = ({ launch: {flight_number, mission_name, launch_date_l
         </Card.Body>
       </Card>
 
-      <Modal show={show} onHide={() => setShow(!show)}>
+      <Modal show={show} size="lg" centered aria-labelledby="example-modal-sizes-title-lg" onHide={() => setShow(!show)}>
         <Modal.Header closeButton>
-          <Modal.Title>{flight_number}</Modal.Title>
+          <Modal.Title><span className="text-dark">Mission:</span> {mission_name}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>modal</Modal.Body>
+        <Modal.Body>
+          <h4>Launch Details:</h4>
+          <ListGroup>
+            <ListGroup.Item>Flight Number: {flight_number}</ListGroup.Item>
+            <ListGroup.Item>Launch Year: {launch_year}</ListGroup.Item>
+            <ListGroup.Item>Launch Successful: <span className={classNames({
+              'text-success': launch_success,
+              'text-danger': !launch_success
+            })}>{launch_success ? 'Yes' : 'No'}</span></ListGroup.Item>
+            {details ? <ListGroup.Item>Details: {details}</ListGroup.Item> : null}
+          </ListGroup>
+
+          <h4>Rocket Details:</h4>
+          <ListGroup>
+            <ListGroup.Item>Rocket ID: {rocket_id}</ListGroup.Item>
+            <ListGroup.Item>Rocket Name: {rocket_name}</ListGroup.Item>
+            <ListGroup.Item>Rocket Type: {rocket_type}</ListGroup.Item>
+          </ListGroup>
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShow(!show)}>
-            Close
-          </Button>
+          <Button variant="secondary" onClick={() => setShow(!show)}>Close</Button>
         </Modal.Footer>
       </Modal>
     </>
@@ -48,5 +65,3 @@ LaunchItem.propTypes = {
 LaunchItem.defaultProps = {
   pastLaunchesData:	{}
 };
-
-export default LaunchItem;
