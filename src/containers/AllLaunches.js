@@ -8,7 +8,7 @@ import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
 import {isEmptyArray} from "../components/helpers/helpers";
 
 import { Menu } from "../components/Menu";
-import { PastLaunches } from '../components/PastLaunches';
+import PastLaunches from '../components/PastLaunches';
 import UpcomingLaunches from '../components/UpcomingLaunches';
 
 class AllLaunches extends Component {

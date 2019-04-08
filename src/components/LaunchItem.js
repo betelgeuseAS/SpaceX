@@ -65,5 +65,3 @@ LaunchItem.propTypes = {
 LaunchItem.defaultProps = {
   pastLaunchesData:	{}
 };
-
-export default LaunchItem;
