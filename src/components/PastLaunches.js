@@ -27,16 +27,17 @@ class PastLaunches extends Component {
         <Container>
           <Row>
             <Col>
-              <SearchBar term={term} data={pastLaunchesData} update={this.updateData.bind(this)}
-              />
+              <SearchBar term={term} data={pastLaunchesData} update={this.updateData.bind(this)}/>
             </Col>
           </Row>
 
           <Row>
             <Col>
-              {data.map(launch => (
+              {
+                data.map(launch => (
                   <LaunchItem key={launch.flight_number} launch={launch} />
-                ))}
+                ))
+              }
             </Col>
           </Row>
         </Container>
