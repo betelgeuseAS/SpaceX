@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import { LaunchItem } from './LaunchItem';
 import { SearchBar } from './SearchBar';
+import { SortBar } from './SortBar';
 
 class PastLaunches extends Component {
   constructor(props) {
@@ -27,7 +28,14 @@ class PastLaunches extends Component {
         <Container>
           <Row>
             <Col>
-              <SearchBar term={term} data={pastLaunchesData} update={this.updateData.bind(this)}/>
+              <Row>
+                <Col md="7">
+                  <SearchBar term={term} data={pastLaunchesData} update={this.updateData.bind(this)} />
+                </Col>
+                <Col md="5">
+                  <SortBar />
+                </Col>
+              </Row>
             </Col>
           </Row>
 
