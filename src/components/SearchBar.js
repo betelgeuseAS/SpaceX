@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Row, Col, Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 export const SearchBar = ({ term, data, update}) => {
   const dataSearch = event => {
@@ -19,21 +19,10 @@ export const SearchBar = ({ term, data, update}) => {
   return (
     <>
       <Form className="text-left">
-        <Row>
-          <Col md="9">
-            <Form.Group controlId="formBasicMission">
-              <Form.Label>Search by mission name:</Form.Label>
-              <Form.Control value={term} onChange={dataSearch} type="text" size="lg" placeholder="Search by mission name..." />
-            </Form.Group>
-          </Col>
-          <Col md="3">
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Sort by date:</Form.Label>
-              <br/>
-              <Button type="button" variant="primary" size="lg">Sort</Button>
-            </Form.Group>
-          </Col>
-        </Row>
+        <Form.Group controlId="formBasicMission">
+          <Form.Label>Search by mission name:</Form.Label>
+          <Form.Control value={term} onChange={dataSearch} type="text" size="lg" placeholder="Search by mission name..." />
+        </Form.Group>
       </Form>
     </>
   );
