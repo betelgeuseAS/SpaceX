@@ -33,7 +33,7 @@ class PastLaunches extends Component {
                   <SearchBar term={term} data={pastLaunchesData} update={this.updateData.bind(this)} />
                 </Col>
                 <Col md="5">
-                  <SortBar />
+                  <SortBar initialData={pastLaunchesData} data={data} update={this.updateData.bind(this)}/>
                 </Col>
               </Row>
             </Col>
