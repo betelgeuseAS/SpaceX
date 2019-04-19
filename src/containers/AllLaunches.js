@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 
 import { fetchPastLaunchesResolver } from '../actions/pastLaunchesAction';
+import { fetchUpcomingLaunchesResolver } from '../actions/upcomingLaunchesAction';
 
 import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
 
@@ -14,10 +15,11 @@ import UpcomingLaunches from '../components/UpcomingLaunches';
 class AllLaunches extends Component {
   componentDidMount() {
     this.props.fetchPastLaunchesResolver();
+    this.props.fetchUpcomingLaunchesResolver();
   }
 
   render() {
-    const { pastLaunches } = this.props;
+    const { pastLaunches, upcomingLaunches } = this.props;
 
     return (
       <>
@@ -37,7 +39,7 @@ class AllLaunches extends Component {
                   {isEmptyArray(pastLaunches) ? <PastLaunches pastLaunchesData={pastLaunches} /> : <div>Loading...</div>}
                 </Tab>
                 <Tab eventKey="upcoming" title="Upcoming Launches">
-                  <UpcomingLaunches />
+                  {isEmptyArray(upcomingLaunches) ? <UpcomingLaunches upcomingLaunchesData={upcomingLaunches} /> : <div>Loading...</div>}
                 </Tab>
               </Tabs>
             </Col>
@@ -50,13 +52,15 @@ class AllLaunches extends Component {
 
 const	mapStateToProps	=	store	=> {
   return {
-    pastLaunches: store.pastLaunches
+    pastLaunches: store.pastLaunches,
+    upcomingLaunches: store.upcomingLaunches
   }
 };
 
 const	mapDispatchToProps = dispatch	=> {
   return {
-    fetchPastLaunchesResolver: () => dispatch(fetchPastLaunchesResolver())
+    fetchPastLaunchesResolver: () => dispatch(fetchPastLaunchesResolver()),
+    fetchUpcomingLaunchesResolver: () => dispatch(fetchUpcomingLaunchesResolver())
   }
 };
 
