@@ -1,20 +1,41 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import {connect} from "react-redux";
+
+import { fetchAllRocketsResolver } from '../actions/allRocketsAction';
 
 import { Menu } from '../components/Menu';
+import { RocketsList } from "../components/RocketsList";
+
+import {isEmptyObject} from "../components/helpers/helpers";
 
 class Rockets extends Component {
+  componentDidMount() {
+    this.props.fetchAllRocketsResolver();
+  }
+
   render() {
+    const { rockets } = this.props;
+
     return (
       <>
         <Menu />
 
-        <h1>Rockets</h1>
+        {isEmptyObject(rockets) ? <RocketsList rockets={rockets} /> : <div>Loading...</div>}
       </>
     );
   }
 }
 
-Rockets.propTypes = {};
+const	mapStateToProps	=	store	=> {
+  return {
+    rockets: store.rockets
+  }
+};
 
-export default Rockets;
+const	mapDispatchToProps = dispatch	=> {
+  return {
+    fetchAllRocketsResolver: () => dispatch(fetchAllRocketsResolver())
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Rockets);
