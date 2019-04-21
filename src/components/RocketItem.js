@@ -15,7 +15,7 @@ export const RocketItem = ({ rocket: {rocket_name, active, description,
   return (
     <>
       <Card style={{ width: '20rem' }} className="text-left">
-        <Card.Header>{rocket_name}</Card.Header>
+        <Card.Header><h2>{rocket_name}</h2></Card.Header>
 
         <Card.Body>
           <Card.Text>Status: <span className={classNames({
@@ -25,7 +25,7 @@ export const RocketItem = ({ rocket: {rocket_name, active, description,
           <Card.Subtitle className="mb-2 text-muted">{description}</Card.Subtitle>
 
           <Card.Title className="rocketTitle">Specs</Card.Title>
-          <Card.Text className="rocketContent">
+          <div className="rocketContent">
             <ul>
               <li>Height: {height.meters}m</li>
               <li>Diameter: {diameter.meters}m</li>
@@ -33,10 +33,10 @@ export const RocketItem = ({ rocket: {rocket_name, active, description,
               <li>Boosters: {boosters}</li>
               <li>Success Rate: {success_rate_pct}%</li>
             </ul>
-          </Card.Text>
+          </div>
 
           <Card.Title className="rocketTitle">Engines</Card.Title>
-          <Card.Text className="rocketContent">
+          <div className="rocketContent">
             <ul>
               <li>Engines: {engines.number}</li>
               <li>Type: {engines.type}</li>
@@ -44,37 +44,39 @@ export const RocketItem = ({ rocket: {rocket_name, active, description,
               <li>Propellant 1: {engines.propellant_1}</li>
               <li>Propellant 2: {engines.propellant_2}</li>
             </ul>
-          </Card.Text>
+          </div>
 
           <Card.Title className="rocketTitle">Payload Weights</Card.Title>
-          <Card.Text className="rocketContent">
-            <ul>
-              {
-                payload_weights.map(item => (
-                  <>
-                    <li>Name: {item.name}</li>
-                    <li>Weight: {item.kg}kg</li>
-                  </>
-                ))
-              }
-            </ul>
-          </Card.Text>
+          <div className="rocketContent">
+            {
+              payload_weights.map((item) => (
+                <ul key={item.id}>
+                  <li>Name: {item.name}</li>
+                  <li>Weight: {item.kg}kg</li>
+                </ul>
+              ))
+            }
+          </div>
 
           <Card.Title className="rocketTitle">Landing Legs</Card.Title>
-          <Card.Text className="rocketContent">
+          <div className="rocketContent">
             <ul>
               <li>Number: {landing_legs.number}</li>
               <li>Material: {landing_legs.material}</li>
             </ul>
-          </Card.Text>
+          </div>
         </Card.Body>
 
         <Card.Footer>
-          <Card.Link href={wikipedia} target="_blank">Read about {rocket_name} on Wikipedia</Card.Link>
+          <Card.Link href={wikipedia} className="link" target="_blank">Read about {rocket_name} on Wikipedia</Card.Link>
         </Card.Footer>
       </Card>
     </>
   );
+};
+
+const setMaxHeight = () => {
+
 };
 
 RocketItem.propTypes = {
