@@ -16,7 +16,7 @@ export const Menu = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Link</Nav.Link>
+          <Nav.Link href="https://github.com/betelgeuseAS/SpaceX" target="_blank">GitHub</Nav.Link>
           <NavDropdown title="Launches" id="basic-nav-dropdown">
             <NavDropdown.Item as="button" className="topLink"><Link to="/launches">All Launches</Link></NavDropdown.Item>
             <NavDropdown.Divider />
