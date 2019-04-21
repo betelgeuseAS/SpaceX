@@ -27,7 +27,7 @@ class AllLaunches extends Component {
 
         <Container>
           <Row>
-            <Col className="text-left">
+            <Col className="text-left mt-3 mb-3">
               <h3>ALL LAUNCHES</h3>
             </Col>
           </Row>

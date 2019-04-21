@@ -70,7 +70,7 @@ class Launch extends Component {
       <>
         <Container className="nextLaunch">
           <Row>
-            <Col className="text-left">
+            <Col className="text-left mt-3">
               <h3>NEXT LAUNCH</h3>
             </Col>
           </Row>
@@ -94,7 +94,7 @@ class Launch extends Component {
             </Col>
           </Row>
 
-          <Row>
+          <Row className="mt-5">
             <Col className="text-left">
               <div><strong>Mission Name: </strong>{nextLaunchData.mission_name}</div>
               <div><strong>Launch Date: </strong>{nextLaunchData.launch_date_local}</div>

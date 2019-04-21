@@ -12,6 +12,12 @@ export const RocketsList = ({ rockets }) => {
     <>
       <Container>
         <Row>
+          <Col className="text-left mt-3 mb-3">
+            <h3>ROCKETS</h3>
+          </Col>
+        </Row>
+
+        <Row>
           <Col>
             <ul className="list">
               {

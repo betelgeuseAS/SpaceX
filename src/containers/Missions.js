@@ -18,8 +18,8 @@ class Missions extends Component {
   }
 
   handleGetMissionById = () => {
-    console.log(this.state.missionId);
-    this.props.fetchOneMissionResolver(this.state.missionId);
+    if (this.state.missionId && this.state.missionId !== ' ')
+      this.props.fetchOneMissionResolver(this.state.missionId);
   };
 
   handleChangeMissionId = (event) => {
@@ -34,6 +34,12 @@ class Missions extends Component {
         <Menu />
 
         <Container>
+          <Row>
+            <Col className="text-left mt-3 mb-3">
+              <h3>MISSIONS</h3>
+            </Col>
+          </Row>
+
           <Row>
             <Col>
               <Form className="text-left">

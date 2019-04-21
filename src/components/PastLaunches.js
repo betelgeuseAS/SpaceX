@@ -26,7 +26,7 @@ class PastLaunches extends Component {
     return (
       <>
         <Container>
-          <Row>
+          <Row className="mt-5">
             <Col>
               <Row>
                 <Col md="7">

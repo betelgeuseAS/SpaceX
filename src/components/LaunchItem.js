@@ -10,7 +10,7 @@ rocket: {rocket_id, rocket_name, rocket_type}} }) => {
   const [show, setShow] = useState(false);
   return (
     <>
-      <Card bg="light" border="dark" text="black" className="mt-3">
+      <Card bg="light" border="dark" text="black" className="mt-3 mb-3">
         <Card.Body>
           <Row>
             <Col md={9} className="text-left">
