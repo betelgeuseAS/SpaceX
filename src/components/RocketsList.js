@@ -13,10 +13,10 @@ export const RocketsList = ({ rockets }) => {
       <Container>
         <Row>
           <Col>
-            <ul>
+            <ul className="list">
               {
                 rockets.map(rocket => (
-                  <li key={rocket.id}>
+                  <li key={rocket.id} className="listItem">
                     <RocketItem rocket={rocket} />
                   </li>
                 ))
