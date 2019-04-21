@@ -28,7 +28,7 @@ export const SortBar = ({ initialData, data, update }) => {
 
   return (
     <>
-      <Form className="text-left">
+      <Form className="text-right">
         <Form.Group controlId="formBasicMission">
           <Form.Label>Sort by Mission name or Date:</Form.Label>
           <br/>
