@@ -10,10 +10,10 @@ Work with API [spaceX](https://github.com/r-spacex/SpaceX-API).
 * `Node` / `Express` / `Mongoose`
 
 ## Quickstart
+Created with [create-react-app](https://github.com/facebook/create-react-app)
 1. `git clone https://github.com/betelgeuseAS/Silkway.git`
-2. `cd Silkway` and `npm install`
-3. `cd Silkway\client` and `npm install`
-4. `cd Silkway` and `npm run dev`
+2. `cd SpaceX` and `npm install`
+3. `npm start`
 
 If the tab doesn't open on your own browser, then open your web browser to localhost:3000.
 
