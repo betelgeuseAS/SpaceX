@@ -11,7 +11,7 @@ Work with API [spaceX](https://github.com/r-spacex/SpaceX-API).
 
 ## Quickstart
 Created with [create-react-app](https://github.com/facebook/create-react-app)
-1. `git clone https://github.com/betelgeuseAS/Silkway.git`
+1. `git clone https://github.com/betelgeuseAS/SpaceX.git`
 2. `cd SpaceX` and `npm install`
 3. `npm start`
 
