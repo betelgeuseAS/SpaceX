@@ -1,4 +1,4 @@
-# Silkway
+# SpaceX
 Work with API [spaceX](https://github.com/r-spacex/SpaceX-API).
 
 ---
