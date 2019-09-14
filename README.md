@@ -1,54 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Silkway
+Work with API [spaceX](https://github.com/r-spacex/SpaceX-API).
 
-Run the command before starting the project - `npm install`
+---
 
-## Available Scripts
+## Technologies
+* `HTML` / `*`
+* `CSS` / `Sass`
+* `React` / `Redux`
+* `Node` / `Express` / `Mongoose`
 
-In the project directory, you can run:
+## Quickstart
+1. `git clone https://github.com/betelgeuseAS/Silkway.git`
+2. `cd Silkway` and `npm install`
+3. `cd Silkway\client` and `npm install`
+4. `cd Silkway` and `npm run dev`
 
-### `npm start`
+If the tab doesn't open on your own browser, then open your web browser to localhost:3000.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API Routs
+Documentation spaceX: [Postman](https://web.postman.co/collections/6630209-a0b427ff-f46f-459b-97c9-e252b9f3f8e4?version=latest&workspace=aa8055e5-dfa9-4c7e-807a-0e3ac6ee0674)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Dependencies
+A brief description of each package and the function it will serve (back-end):
+* `bcryptjs`: used to transform sass into css
 
-### `npm test`
+A brief description of each package and the function it will serve (front-end):
+* `axios`: promise based HTTP client for making requests to our backend
+* `classnames`: used for conditional classes in our JSX
+* `react-redux`: allows us to use Redux with React
+* `react-router-dom`: used for routing purposes
+* `redux`: used to manage state between components (can be used with React or any other view library)
+* `redux-thunk`: middleware for Redux that allows us to directly access the dispatch method to make asynchronous calls from our actions
+* `redux-logger`: middleware for Redux that allows watch on store.
 
-Launch the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Bug fixes
+* `Node Sass could not find a binding for your current environment: Windows 64-bit with Node.js 12.x`
+Fix:
+1) `npm install`
+2) `npm rebuild node-sass --force` or `npm rebuild node-sass`
 
-### `npm run build`
+* `Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (72)`
+1) `npm uninstall node-sass`
+2) `npm install node-sass`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* `Another`  
+You can always use [nvm (Node Version Manager)](https://canonium.com/articles/managing-node-versions-with-windows-nvm)
