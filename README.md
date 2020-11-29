@@ -7,7 +7,6 @@ Work with API [spaceX](https://github.com/r-spacex/SpaceX-API).
 * `HTML` / `*`
 * `CSS` / `Sass`
 * `React` / `Redux`
-* `Node` / `Express` / `Mongoose`
 
 ## Quickstart
 Created with [create-react-app](https://github.com/facebook/create-react-app)
